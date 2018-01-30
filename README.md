@@ -1,4 +1,4 @@
-# LibexProject
+# ZirconApp - LibexProject
 
 This project developed as an example/test app for Zircon Web Shell. It demonstrates an app with connection to authorization data, connection to a zircon shell interface and a view displaying connection properties. 
 
