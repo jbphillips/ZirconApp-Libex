@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { LibexComponent } from './app.component';
 import { LibexModule } from './libex/libex.module';
 
 import { UserProfile } from '@zircon/gemsauth/dist/modules/gems.cloud.dtos';
@@ -19,18 +19,18 @@ const appRoutes: Routes = [
 
 @NgModule({
   declarations: [
-    AppComponent,
+    LibexComponent,
     HelloComponent
   ],
   imports: [
-    RouterModule.forRoot(
-      appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
-    ),
+    // RouterModule.forRoot(
+    //   appRoutes,
+    //   { enableTracing: true } // <-- debugging purposes only
+    // ),
     BrowserModule,
     LibexModule.forRoot()
   ],
   providers: [UserProfile, CurrentUserService, LoginService, ClientService],
-  bootstrap: [AppComponent]
+  bootstrap: [LibexComponent]
 })
 export class AppModule { }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AppComponent } from './app.component';
+import { LibexComponent } from './app.component';
 import { LibexModule } from './libex/libex.module';
 import { UserProfile } from '@zircon/gemsauth/dist/modules/gems.cloud.dtos';
 import { LoginService } from '@zircon/gemsauth/dist/services/login.service';
@@ -15,17 +14,19 @@ var AppModule = (function () {
     AppModule.decorators = [
         { type: NgModule, args: [{
                     declarations: [
-                        AppComponent,
+                        LibexComponent,
                         HelloComponent
                     ],
                     imports: [
-                        RouterModule.forRoot(appRoutes, { enableTracing: true } // <-- debugging purposes only
-                        ),
+                        // RouterModule.forRoot(
+                        //   appRoutes,
+                        //   { enableTracing: true } // <-- debugging purposes only
+                        // ),
                         BrowserModule,
                         LibexModule.forRoot()
                     ],
                     providers: [UserProfile, CurrentUserService, LoginService, ClientService],
-                    bootstrap: [AppComponent]
+                    bootstrap: [LibexComponent]
                 },] },
     ];
     /** @nocollapse */

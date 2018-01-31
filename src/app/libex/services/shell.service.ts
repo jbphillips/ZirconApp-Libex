@@ -25,6 +25,7 @@ export type NoticationType = 'Server' | 'Message' | 'Warning' | 'Error';
 
 // class used to describe an work with notifications
 export class ZirconNotification {
+  name: string; // name of notification
   ownerModuleName: string; // npm name of associated app (could also be user, customer, or vendor)
   type: NoticationType; // type of notification
   appRoute: string; // entry route for app (only used when not null)
