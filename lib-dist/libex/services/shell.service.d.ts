@@ -16,6 +16,8 @@ export declare class ZirconApp {
 }
 export declare type NoticationType = 'Server' | 'Message' | 'Warning' | 'Error';
 export declare class ZirconNotification {
+    name: string;
+    description: string;
     ownerModuleName: string;
     type: NoticationType;
     appRoute: string;
@@ -31,6 +33,7 @@ export declare class ShellService {
     private appSource;
     private notificationSource;
     constructor();
+    currentRoute: Observable<string>;
     title: Observable<string>;
     apps: Observable<ZirconApp[]>;
     notifications: Observable<ZirconNotification[]>;

@@ -1,11 +1,14 @@
 import { ShellService, ZirconApp, ZirconNotification, NoticationType } from './libex/services/shell.service';
 export declare class LibexComponent extends ZirconApp {
-    shell: ShellService;
     notificationType: NoticationType;
-    constructor(shell: ShellService);
-    setZirconAppData(zirconAppData: ZirconApp): void;
+    shellService: ShellService;
+    apps: ZirconApp[];
+    constructor();
+    private setZirconShellServiceData();
     getLibexNotification(): ZirconNotification;
     setLibexNotification(notification: ZirconNotification): void;
     private processLibexNotificationDismiss(val);
-    dismissNotificationOnClick(): void;
+    setTitle(val: string): void;
+    addNotification(val: ZirconNotification): void;
+    removeNotification(val: ZirconNotification): void;
 }

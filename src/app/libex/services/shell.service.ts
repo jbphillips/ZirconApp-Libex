@@ -26,6 +26,7 @@ export type NoticationType = 'Server' | 'Message' | 'Warning' | 'Error';
 // class used to describe an work with notifications
 export class ZirconNotification {
   name: string; // name of notification
+  description: string; // notification description... long text
   ownerModuleName: string; // npm name of associated app (could also be user, customer, or vendor)
   type: NoticationType; // type of notification
   appRoute: string; // entry route for app (only used when not null)
@@ -53,7 +54,7 @@ export class ShellService {
 
   constructor() {}
 
-  //currentRoute = this.currentRoute.asObservable(); // current route in the shell content area
+  currentRoute = this.currentRouteSource.asObservable(); // current route in the shell content area
   title = this.titleSource.asObservable(); // title in the topbar
   apps = this.appSource.asObservable(); // list of defined app definitions
   notifications = this.notificationSource.asObservable(); // list of active notifications

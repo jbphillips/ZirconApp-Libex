@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ShellService, ZirconApp } from './../services/shell.service';
+//import { ZirconApp } from './../services/shell.service';//ShellService
 import { CurrentUserService } from '@zircon/gemsauth/dist/services/current.user.service';
 import { UserProfile } from '@zircon/gemsauth/dist/modules/gems.cloud.dtos';
 
@@ -17,8 +17,8 @@ export class HelloComponent implements OnInit {
 
   constructor(
     public currentUserService: CurrentUserService,
-    public userProfile: UserProfile,
-    public shell: ShellService,
+    public userProfile: UserProfile
+    //public shell: ShellService,
   ) {
 
     try {
@@ -26,7 +26,7 @@ export class HelloComponent implements OnInit {
       this.userName = this.userProfile.FirstName + " " + this.userProfile.LastName;
     }
     catch (Error) {
-      alert(Error.message);
+      console.log(Error.message);
     }
   }
 
@@ -41,7 +41,7 @@ export class HelloComponent implements OnInit {
       _name = this.userProfile.FirstName + " " + this.userProfile.LastName;
     }
     catch (Error) {
-      alert(Error.message);
+      console.log(Error.message);
     }
 
     return _name;

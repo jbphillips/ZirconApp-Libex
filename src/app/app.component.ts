@@ -13,12 +13,12 @@ let libexNotification = new ZirconNotification();
 export class LibexComponent extends ZirconApp {
 
   notificationType: NoticationType;
+  shellService: ShellService;
   apps: ZirconApp [] = [];
 
-  constructor(public shell: ShellService) {
+  constructor() {
     super();
 
-    this.setZirconAppData();
     this.setZirconShellServiceData();
 
     if (libexNotification != null) {
@@ -26,19 +26,7 @@ export class LibexComponent extends ZirconApp {
     }
   }
 
-  //Used for App development. These values declared in Zircon Shell manifest
-  private setZirconAppData() {
-
-      this.moduleName = "[moduleName]";
-      this.moduleVersion = "[moduleVersion]";
-      this.displayName = "[displayName]";
-      this.description = "[description]";
-      this.iconPath = "[iconPath]";
-  }
-
   private setZirconShellServiceData(){
-   
-
 
   }
 
@@ -59,15 +47,15 @@ export class LibexComponent extends ZirconApp {
 
   private processLibexNotificationDismiss(val: ZirconNotification) {
 
-    alert("Notification Dismissed: " + val.ownerModuleName);
+    console.log("Notification Dismissed: " + val.ownerModuleName);
 
   }
 
   //Shell service items
   setTitle(val: string) {
-    this.shell.title.subscribe(result => { console.log(val) });
+    this.shellService.title.subscribe(result => { console.log(val) });
   }
-  
+
   addNotification(val: ZirconNotification) {
   }
 

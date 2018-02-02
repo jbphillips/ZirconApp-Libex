@@ -9,33 +9,20 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 import { Component } from '@angular/core';
-import { ShellService, ZirconApp, ZirconNotification } from './libex/services/shell.service';
+import { ZirconApp, ZirconNotification } from './libex/services/shell.service';
 var libexNotification = new ZirconNotification();
 var LibexComponent = (function (_super) {
     __extends(LibexComponent, _super);
-    function LibexComponent(shell) {
+    function LibexComponent() {
         var _this = _super.call(this) || this;
-        _this.shell = shell;
+        _this.apps = [];
+        _this.setZirconShellServiceData();
         if (libexNotification != null) {
             libexNotification.dismissed.subscribe(function (result) { _this.processLibexNotificationDismiss(result); });
         }
         return _this;
     }
-    LibexComponent.prototype.setZirconAppData = function (zirconAppData) {
-        if (zirconAppData != null) {
-            this.moduleName = zirconAppData.moduleName; //"libex-project";
-            this.moduleVersion = zirconAppData.moduleVersion; //"1.0.5";
-            this.displayName = zirconAppData.displayName; //"Libex Main Component";
-            this.description = zirconAppData.description; //"A library example for Gems Zircon Platform";
-            this.iconPath = zirconAppData.iconPath; //"./assets/logo.jpg";
-        }
-        else {
-            this.moduleName = "[moduleName]";
-            this.moduleVersion = "[moduleVersion]";
-            this.displayName = "[displayName]";
-            this.description = "[description]";
-            this.iconPath = "[iconPath]";
-        }
+    LibexComponent.prototype.setZirconShellServiceData = function () {
     };
     //ZirconNotifications 
     LibexComponent.prototype.getLibexNotification = function () {
@@ -47,16 +34,15 @@ var LibexComponent = (function (_super) {
         libexNotification = notification;
     };
     LibexComponent.prototype.processLibexNotificationDismiss = function (val) {
-        alert("Notification Dismissed: " + val.ownerModuleName);
+        console.log("Notification Dismissed: " + val.ownerModuleName);
     };
-    LibexComponent.prototype.dismissNotificationOnClick = function () {
-        var _this = this;
-        try {
-            libexNotification.dismissed.subscribe(function (result) { _this.processLibexNotificationDismiss(result); });
-        }
-        catch (Error) {
-            console.log(Error.message);
-        }
+    //Shell service items
+    LibexComponent.prototype.setTitle = function (val) {
+        this.shellService.title.subscribe(function (result) { console.log(val); });
+    };
+    LibexComponent.prototype.addNotification = function (val) {
+    };
+    LibexComponent.prototype.removeNotification = function (val) {
     };
     LibexComponent.decorators = [
         { type: Component, args: [{
@@ -66,9 +52,7 @@ var LibexComponent = (function (_super) {
                 },] },
     ];
     /** @nocollapse */
-    LibexComponent.ctorParameters = function () { return [
-        { type: ShellService, },
-    ]; };
+    LibexComponent.ctorParameters = function () { return []; };
     return LibexComponent;
 }(ZirconApp));
 export { LibexComponent };

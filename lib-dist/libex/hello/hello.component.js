@@ -1,20 +1,21 @@
 import { Component } from '@angular/core';
-import { ShellService } from './../services/shell.service';
+//import { ZirconApp } from './../services/shell.service';//ShellService
 import { CurrentUserService } from '@zircon/gemsauth/dist/services/current.user.service';
 import { UserProfile } from '@zircon/gemsauth/dist/modules/gems.cloud.dtos';
 var HelloComponent = (function () {
-    function HelloComponent(currentUserService, userProfile, shell) {
+    function HelloComponent(currentUserService, userProfile
+        //public shell: ShellService,
+    ) {
         var _this = this;
         this.currentUserService = currentUserService;
         this.userProfile = userProfile;
-        this.shell = shell;
         this.title = 'Libex Hello Component';
         try {
             this.currentUserService.profile.subscribe(function (profile) { return _this.userProfile = profile; });
             this.userName = this.userProfile.FirstName + " " + this.userProfile.LastName;
         }
         catch (Error) {
-            alert(Error.message);
+            console.log(Error.message);
         }
     }
     HelloComponent.prototype.ngOnInit = function () {
@@ -27,7 +28,7 @@ var HelloComponent = (function () {
             _name = this.userProfile.FirstName + " " + this.userProfile.LastName;
         }
         catch (Error) {
-            alert(Error.message);
+            console.log(Error.message);
         }
         return _name;
     };
@@ -43,7 +44,6 @@ var HelloComponent = (function () {
     HelloComponent.ctorParameters = function () { return [
         { type: CurrentUserService, },
         { type: UserProfile, },
-        { type: ShellService, },
     ]; };
     return HelloComponent;
 }());
