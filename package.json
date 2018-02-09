@@ -1,11 +1,11 @@
 {
   "name": "libex-project",
   "description": "A library example for Gems Zircon Platform",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "author": "James Phillips",
   "license": "MIT",
   "main": "./lib-dist/main.js",
-  "types": "./lib-dist/main.d.ts" ,
+  "types": "./lib-dist/main.d.ts",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -28,6 +28,8 @@
     "@angular/router": "^5.0.0",
     "@zircon/gemsauth": "^1.0.8",
     "core-js": "^2.4.1",
+    "hammerjs": "^2.0.8",
+    "ngx-carousel": "^1.3.5",
     "rxjs": "^5.5.2",
     "zone.js": "^0.8.14"
   },
@@ -52,5 +54,5 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "~2.4.2"
-  }   
+  }
 }

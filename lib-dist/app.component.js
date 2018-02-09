@@ -47,7 +47,7 @@ var LibexComponent = (function (_super) {
     LibexComponent.decorators = [
         { type: Component, args: [{
                     selector: 'libex-root',
-                    template: "<libex-hello></libex-hello>",
+                    template: "<libex-valueChain></libex-valueChain>>",
                     styles: [".example-button-row{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-ms-flex-pack:distribute;justify-content:space-around}"]
                 },] },
     ];
