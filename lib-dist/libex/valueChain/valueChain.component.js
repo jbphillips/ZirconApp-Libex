@@ -5,8 +5,7 @@ var ValueChainComponent = (function () {
         this.carouselItems = [
             './../../assets/images/valueChain/image1.png',
             './../../assets/images/valueChain/image2.png',
-            './../../assets/images/valueChain/image3.png',
-            './../../assets/images/valueChain/image4.png'
+            './../../assets/images/valueChain/image3.png'
         ];
     }
     ValueChainComponent.prototype.ngOnInit = function () {

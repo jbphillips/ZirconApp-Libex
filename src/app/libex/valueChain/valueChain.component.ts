@@ -37,8 +37,7 @@ export class ValueChainComponent implements OnInit {
   public carouselItems: string[] = [
     './../../assets/images/valueChain/image1.png',
     './../../assets/images/valueChain/image2.png',
-    './../../assets/images/valueChain/image3.png',
-    './../../assets/images/valueChain/image4.png'
+    './../../assets/images/valueChain/image3.png'
   ];
 
   public myfunc(event: Event) {
