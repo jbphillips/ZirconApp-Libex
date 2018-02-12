@@ -4,3 +4,8 @@ export { ZirconNotification } from './libex/services/shell.service';
 export { NoticationType } from './libex/services/shell.service';
 export { LibexComponent } from './app.component';
 export { HelloComponent } from './libex/hello/hello.component';
+export { ValueChainComponent } from './libex/valueChain/valueChain.component';
+export { CustomerValuePropositionComponent } from './libex/customer-value-proposition/customer-value-proposition.component';
+export { DevelopmentRoadmapComponent } from './libex/development-roadmap/development-roadmap.component';
+export { EcosystemComponent } from './libex/ecosystem/ecosystem.component';
+export { GemsDataComponent } from './libex/gems-data/gems-data.component';

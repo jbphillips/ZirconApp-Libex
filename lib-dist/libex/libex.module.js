@@ -23,7 +23,16 @@ var LibexModule = (function () {
                     imports: [
                         CommonModule
                     ],
-                    declarations: [ProductModelsComponent, ProductRestructuringComponent, DevelopmentRoadmapComponent, ArchitectureComponent, EcosystemComponent, GemsDataComponent, GemsOverviewComponent, CustomerValuePropositionComponent],
+                    declarations: [
+                        ProductModelsComponent,
+                        ProductRestructuringComponent,
+                        DevelopmentRoadmapComponent,
+                        ArchitectureComponent,
+                        EcosystemComponent,
+                        GemsDataComponent,
+                        GemsOverviewComponent,
+                        CustomerValuePropositionComponent
+                    ],
                     providers: []
                 },] },
     ];

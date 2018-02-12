@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router, RouterLink } from '@angular/router';
 import { HelloComponent } from './libex/hello/hello.component';
+import { ValueChainComponent } from './libex/valueChain/valueChain.component';
 import { ShellService, ZirconApp, ZirconNotification, NoticationType } from './libex/services/shell.service';
 
 let libexNotification = new ZirconNotification();

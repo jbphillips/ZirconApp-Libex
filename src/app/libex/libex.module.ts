@@ -14,7 +14,15 @@ import { CustomerValuePropositionComponent } from './customer-value-proposition/
   imports: [
     CommonModule
   ],
-  declarations: [ProductModelsComponent, ProductRestructuringComponent, DevelopmentRoadmapComponent, ArchitectureComponent, EcosystemComponent, GemsDataComponent, GemsOverviewComponent, CustomerValuePropositionComponent],
+  declarations: [
+    ProductModelsComponent, 
+    ProductRestructuringComponent, 
+    DevelopmentRoadmapComponent, 
+    ArchitectureComponent, 
+    EcosystemComponent, 
+    GemsDataComponent, 
+    GemsOverviewComponent, 
+    CustomerValuePropositionComponent],
   providers: []
 })
 export class LibexModule { 
