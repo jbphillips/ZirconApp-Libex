@@ -10,6 +10,7 @@ export declare class ZirconApp {
     appRoute: string;
     settingsRoute: string;
     isRunning: boolean;
+    isInstalled: boolean;
     canClose: boolean;
     navPaths: string[];
     keywords: string[];
@@ -41,6 +42,7 @@ export declare class ShellService {
     setCurrentRoute(val: string): void;
     addApp(val: ZirconApp): void;
     removeApp(val: ZirconApp): void;
+    updateApp(val: ZirconApp): void;
     addNotification(val: ZirconNotification): void;
     removeNotification(val: ZirconNotification): void;
 }

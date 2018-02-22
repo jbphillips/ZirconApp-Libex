@@ -1,7 +1,7 @@
 {
   "name": "libex-project",
   "description": "A library example for Gems Zircon Platform",
-  "version": "1.0.7",
+  "version": "1.0.9",
   "author": "James Phillips",
   "license": "MIT",
   "main": "./lib-dist/main.js",

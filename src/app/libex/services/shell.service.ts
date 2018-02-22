@@ -15,6 +15,7 @@ export class ZirconApp {
   appRoute: string; // main entry route for app
   settingsRoute: string; // setting route for app
   isRunning: boolean; // true if app is running (set by app read by shell)
+  isInstalled: boolean; // true if app has been installed from the appStore
   canClose: boolean; // true if app can be closed (set by app read by shell)
   navPaths: string[]; // list of navbar categories where app should be shown
   keywords: string[]; // list of app relavent keyword for app searching
@@ -83,6 +84,11 @@ export class ShellService {
       list.splice(index, 1);
       this.appSource.next(list);
     }
+  }
+
+  updateApp(val: ZirconApp) {
+    this.removeApp(val);
+    this.addApp(val);
   }
 
   addNotification(val: ZirconNotification) {

@@ -56,6 +56,10 @@ var ShellService = (function () {
             this.appSource.next(list);
         }
     };
+    ShellService.prototype.updateApp = function (val) {
+        this.removeApp(val);
+        this.addApp(val);
+    };
     ShellService.prototype.addNotification = function (val) {
         var list = this.notificationSource.getValue();
         var index = list.indexOf(val, 0);
